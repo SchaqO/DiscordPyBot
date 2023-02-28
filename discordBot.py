@@ -20,7 +20,7 @@ async def on_message(message):
         return
 
     if message.content.startswith("$hello"):
-        await message.channel.send('test')
+        await message.channel.send('this is kinda weird')
 
     if message.content.startswith("finally, bo awanday pe chw"):
         await message.channel.send('da gu bxo hatiw, har awanday pe ache')
