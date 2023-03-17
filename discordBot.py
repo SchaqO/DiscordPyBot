@@ -1,6 +1,11 @@
 import discord
 import os
+import sys
+
+sys.path.insert(0, '/features')
 from dotenv import load_dotenv
+
+from features.quotes import *
 
 load_dotenv()
 AUTH_TOKEN = os.getenv('AUTH_TOKEN')
@@ -24,5 +29,9 @@ async def on_message(message):
 
     if message.content.startswith("finally, bo awanday pe chw"):
         await message.channel.send('da gu bxo hatiw, har awanday pe ache')
+
+    if message.content.startswith("$quote"):
+        quote = getQuote()
+        await message.channel.send(quote)
 
 client.run(AUTH_TOKEN)
